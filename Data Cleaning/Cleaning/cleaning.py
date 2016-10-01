@@ -7,13 +7,13 @@ week7 = open('G:/Academic/Data Mining/Bimbo/Training Set/trainWeek7.csv', 'r')
 week8 = open('G:/Academic/Data Mining/Bimbo/Training Set/trainWeek8.csv', 'r')
 week9 = open('G:/Academic/Data Mining/Bimbo/Training Set/trainWeek9.csv', 'r')
 
-cleanedWeek3 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek3.csv', 'a')
-cleanedWeek4 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek4.csv', 'a')
-cleanedWeek5 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek5.csv', 'a')
-cleanedWeek6 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek6.csv', 'a')
-cleanedWeek7 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek7.csv', 'a')
-cleanedWeek8 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek8.csv', 'a')
-cleanedWeek9 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek9.csv', 'a')
+cleanedWeek3 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek3.csv', 'w')
+cleanedWeek4 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek4.csv', 'w')
+cleanedWeek5 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek5.csv', 'w')
+cleanedWeek6 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek6.csv', 'w')
+cleanedWeek7 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek7.csv', 'w')
+cleanedWeek8 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek8.csv', 'w')
+cleanedWeek9 = open('G:/Academic/Data Mining/Bimbo/Training Set/cleanedTrainWeek9.csv', 'w')
 
 # insert column names at the top of the file
 
@@ -27,17 +27,26 @@ cleanedWeek7.write(line)
 cleanedWeek8.write(line)
 cleanedWeek9.write(line)
 
+count = 0
 for line in week3:
      if not line.startswith("S"):
         data = line.split(',')
         if ((int(data[6]) - int(data[8]) == int(data[10]))):
             cleanedWeek3.write(line)
+        else:
+            count = count + 1
+print count
+count = 0
 
 for line in week4:
      if not line.startswith("S"):
         data = line.split(',')
         if ((int(data[6]) - int(data[8]) == int(data[10]))):
             cleanedWeek4.write(line)
+        else:
+            count = count + 1
+print count
+count = 0
 
 for line in week5:
      if not line.startswith("S"):
